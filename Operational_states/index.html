@@ -1,0 +1,975 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Error_cases/">
+      
+      
+        <link rel="next" href="../ensor_polling/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Operational states of heater - PiSpace Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operational-states-of-heater" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PiSpace Documentation" class="md-header__button md-logo" aria-label="PiSpace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PiSpace Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operational states of heater
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PiSpace Documentation" class="md-nav__button md-logo" aria-label="PiSpace Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    PiSpace Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to PiSpace Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Error_cases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Error cases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Operational states of heater
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Operational states of heater
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ignition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fire
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cooldown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cooldown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Idle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Idle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preheat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preheat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preheat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ensor_polling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sensor Polling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prime
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Glow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ignition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ignition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fire
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cooldown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cooldown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Idle
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Idle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preheat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preheat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preheat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-values_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Values:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="operational-states-of-heater">Operational states of heater</h1>
+<p>This section defines the operational states of the diesel heater and the role of each component (glow plug, pump, fan) during these states. It explains how the system progresses from idle to active heating and eventually shuts down safely. Each state is accompanied by a description and sensor monitoring requirements.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>State</strong></th>
+<th style="text-align: center;"><strong>Glow Plug</strong></th>
+<th style="text-align: center;"><strong>Pump</strong></th>
+<th style="text-align: center;"><strong>Fan</strong></th>
+<th style="text-align: center;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Prime</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Prepares the fuel line by priming it with fuel.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Glow</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Heats the combustion chamber and provides airflow.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Ignition</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Glow plug remains active while fuel pump feeds fuel to establish the flame.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fire</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Combustion starts; pump feeds fuel; fan maintains airflow.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Cooldown</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Allows for safe shutdown by cooling the combustion chamber.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Idle</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">System is in standby; no components are active.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Error</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Fan runs to clear the chamber if an error occurs.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Preheat</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Activates the glow plug to bring the chamber to operating temp.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prime">Prime</h2>
+<p>The <strong>Prime</strong> state prepares the fuel line by priming it with fuel. The pump is activated to ensure the system has an adequate fuel supply before proceeding to the ignition process. </p>
+<ul>
+<li><strong>Glow Plug</strong>: Off</li>
+<li><strong>Pump</strong>: On</li>
+<li><strong>Fan</strong>: Off</li>
+</ul>
+<h3 id="sensors-and-values">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for significant temperature increases to ensure no residual combustion is occurring.</li>
+<li><strong>Inlet Temp Sensor</strong>: Check air inlet temperature to verify the system is ready for operation.</li>
+<li><strong>Ambient Temp Sensor</strong>: Monitor room temperature to determine if heating is necessary (optional).</li>
+<li><strong>Flame Sensor</strong>: Not monitored in this state.</li>
+</ul>
+<hr />
+<h2 id="glow">Glow</h2>
+<p>The <strong>Glow</strong> state activates the glow plug to heat the combustion chamber. The fan is also activated to provide airflow, ensuring proper oxygen availability for ignition.</p>
+<ul>
+<li><strong>Glow Plug</strong>: On</li>
+<li><strong>Pump</strong>: Off</li>
+<li><strong>Fan</strong>: On</li>
+</ul>
+<h3 id="sensors-and-values_1">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for temperature rise, ensuring the combustion chamber reaches ignition-ready temperatures.</li>
+<li><strong>Inlet Temp Sensor</strong>: Ensure air temperature is stable and within operational ranges.</li>
+<li><strong>Ambient Temp Sensor</strong>: Not critical in this state.</li>
+<li><strong>Flame Sensor</strong>: Not monitored in this state.</li>
+</ul>
+<hr />
+<h2 id="ignition">Ignition</h2>
+<p>The <strong>Ignition</strong> state begins the process of establishing a flame. The glow plug remains active while the pump delivers fuel, and the fan ensures sufficient airflow. This state continues until the flame sensor detects a stable flame or the case sensor indicates sufficient combustion temperature.</p>
+<ul>
+<li><strong>Glow Plug</strong>: On</li>
+<li><strong>Pump</strong>: On</li>
+<li><strong>Fan</strong>: On</li>
+</ul>
+<h3 id="sensors-and-values_2">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for a rapid temperature increase to verify combustion is starting.</li>
+<li><strong>Inlet Temp Sensor</strong>: Check air stability to support proper combustion.</li>
+<li><strong>Ambient Temp Sensor</strong>: Not critical in this state.</li>
+<li><strong>Flame Sensor</strong>: Actively monitored to confirm flame.</li>
+</ul>
+<hr />
+<h2 id="fire">Fire</h2>
+<p>The <strong>Fire</strong> state indicates that combustion has been successfully established. The glow plug is deactivated, and the pump continues to deliver fuel while the fan maintains airflow.</p>
+<ul>
+<li><strong>Glow Plug</strong>: Off</li>
+<li><strong>Pump</strong>: On</li>
+<li><strong>Fan</strong>: On</li>
+</ul>
+<h3 id="sensors-and-values_3">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for consistent combustion temperatures, ensuring stable operation.</li>
+<li><strong>Inlet Temp Sensor</strong>: Ensure air supply remains within expected temperature ranges.</li>
+<li><strong>Ambient Temp Sensor</strong>: Used to regulate heating output.</li>
+<li><strong>Flame Sensor</strong>: Periodically monitored to ensure flame stability.</li>
+</ul>
+<hr />
+<h2 id="cooldown">Cooldown</h2>
+<p>The <strong>Cooldown</strong> state allows the system to safely shut down by cooling the combustion chamber. The fan remains active to dissipate heat, and the glow plug is deactivated.</p>
+<ul>
+<li><strong>Glow Plug</strong>: Off</li>
+<li><strong>Pump</strong>: Off</li>
+<li><strong>Fan</strong>: On</li>
+</ul>
+<h3 id="sensors-and-values_4">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for a temperature drop to a safe level before transitioning to idle.</li>
+<li><strong>Inlet Temp Sensor</strong>: Ensure air remains stable and does not contribute to overheating.</li>
+<li><strong>Ambient Temp Sensor</strong>: Not critical in this state.</li>
+<li><strong>Flame Sensor</strong>: Ensure no flame is present during the cooldown process.</li>
+</ul>
+<hr />
+<h2 id="idle">Idle</h2>
+<p>The <strong>Idle</strong> state represents a standby mode where no components are active. The system waits for a signal to begin the next cycle.</p>
+<ul>
+<li><strong>Glow Plug</strong>: Off</li>
+<li><strong>Pump</strong>: Off</li>
+<li><strong>Fan</strong>: Off</li>
+</ul>
+<h3 id="sensors-and-values_5">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for ambient stabilization to ensure the heater is cool and safe.</li>
+<li><strong>Inlet Temp Sensor</strong>: Not critical in this state.</li>
+<li><strong>Ambient Temp Sensor</strong>: Continuously monitored to determine if heating is needed.</li>
+<li><strong>Flame Sensor</strong>: Ensure no residual flame is detected.</li>
+</ul>
+<hr />
+<h2 id="error">Error</h2>
+<p>The <strong>Error</strong> state is triggered when an issue occurs, such as a failure to ignite or overheating. The fan runs to clear the combustion chamber and ensure safety.</p>
+<ul>
+<li><strong>Glow Plug</strong>: Off</li>
+<li><strong>Pump</strong>: Off</li>
+<li><strong>Fan</strong>: On</li>
+</ul>
+<h3 id="sensors-and-values_6">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for abnormal temperature changes or overheating.</li>
+<li><strong>Inlet Temp Sensor</strong>: Verify air supply for unexpected fluctuations.</li>
+<li><strong>Ambient Temp Sensor</strong>: Not critical in this state.</li>
+<li><strong>Flame Sensor</strong>: Ensure no flame persists during error handling.</li>
+</ul>
+<hr />
+<h2 id="preheat">Preheat</h2>
+<p>The <strong>Preheat</strong> state activates the glow plug to bring the combustion chamber to the required operating temperature. This state occurs before the <strong>Glow</strong> state if additional heating is needed.</p>
+<ul>
+<li><strong>Glow Plug</strong>: On</li>
+<li><strong>Pump</strong>: Off</li>
+<li><strong>Fan</strong>: Off</li>
+</ul>
+<h3 id="sensors-and-values_7">Sensors and Values:</h3>
+<ul>
+<li><strong>Case Sensor</strong>: Monitor for rising temperatures to confirm the chamber is heating effectively.</li>
+<li><strong>Inlet Temp Sensor</strong>: Ensure air remains stable and does not cool the chamber.</li>
+<li><strong>Ambient Temp Sensor</strong>: Not critical in this state.</li>
+<li><strong>Flame Sensor</strong>: Not monitored in this state.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
