@@ -1,0 +1,5 @@
+site_name: PiSpace Documentation
+theme:
+  name: material
+markdown_extensions:
+  - tables
