@@ -1,0 +1,8 @@
+.venv/
+site/
+.vscode/
+*.log
+*.tmp
+__pycache__/
+*.pyc
+.env
