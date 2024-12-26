@@ -3,7 +3,9 @@
 Welcome to the PiSpace project! This repository contains all the necessary resources to get started with PiSpace and its documentation.
 
 ## Table of Contents
+
 - [Introduction](#introduction)
+- [Documentation](#documentation)
 - [Requirements](#requirements)
 - [Setting Up the Project](#setting-up-the-project)
 - [Building the Documentation](#building-the-documentation)
@@ -14,7 +16,17 @@ Welcome to the PiSpace project! This repository contains all the necessary resou
 
 ## Introduction
 
-PiSpace is a project designed to replace the mainboard controller of generic Chinese diesel heaters with an opensource feature rich smart controller based on the esp32 platform. The documentation for this project is built using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/), a static site generator tailored for clean and professional documentation.
+PiSpace is a project designed to [insert a brief description of the project]. The documentation for this project is built using [MkDocs Material](https://squidfunk.github.io/mkdocs-material/), a static site generator tailored for clean and professional documentation.
+
+---
+
+## Documentation
+
+The built documentation for PiSpace is available online. You can access it here:
+
+👉 [PiSpace Documentation]( https://superkmk.github.io/PiSpace/)
+
+The documentation includes detailed information about the project setup, features, usage, and contribution guidelines.
 
 ---
 
