@@ -1,3 +1,116 @@
+Customized GPLv3 License with Selling and Usage Exceptions
+
+Copyright (C) [2024] [DieselIQ.org]
+
+This program is free software: you can redistribute it and/or modify it 
+under the terms of the GNU General Public License as published by the 
+Free Software Foundation, version 3 of the License.
+
+This license includes the following additional terms and conditions:
+
+Definitions
+
+"Software" refers to the program, application, or codebase covered by this
+License, including all associated source code, binaries, and documentation.
+
+"Sale" refers to any transaction, whether digital or physical, in which 
+ownership, rights, or access to a product, including Software or Hardware 
+Designs, is transferred in exchange for monetary or other valuable 
+consideration.
+
+"Hardware Designs" refers to the physical schematics, materials lists, 
+blueprints, or other documentation that describe the construction, assembly,
+or operation of physical components associated with the Software.
+
+"Internal Use" refers to the deployment or utilization of the Software 
+within an organization or business entity for its internal operations, 
+processes, or development purposes. This includes nonprofit and for-profit
+entities but excludes use in educational institutions for instructional 
+purposes unless explicitly licensed.
+
+"Physical Product" refers to a tangible item that incorporates or uses the
+Software as an integral component.
+
+"Commercial Use" is defined as any use of the Software or its derivatives in
+connection with a revenue-generating activity, direct or indirect, including
+but not limited to:
+  -Sale, licensing, or sublicensing of the Software.
+  -Use in a business operation or any activity intended to generate profit.
+  -Providing paid support, consultation, or services involving the Software.
+  -For the purpose of creating a product to sell and/or market.
+
+"Software License" refers to the formal authorization granted by the 
+copyright holder, allowing the user to utilize the Software or Hardware 
+Designs under specific terms, including but not limited to Internal Use, 
+Commercial Use, or the manufacture of Physical Products.
+
+Additional Terms and Conditions
+
+Section 1: Selling Exception
+
+1. The Software and/or Hardware Designs may not be sold on its own, either 
+as source code or in binary form. Selling of the Software is permitted 
+only when it is bundled and distributed as part of a Physical Product 
+("Physical Product").
+
+2. Manufacture of Physical Products is prohibited without a valid Software 
+License.
+
+Section 2: Commercial Use Restriction
+
+1. Any Commercial Use of the Software or Hardware Designs is prohibited 
+without purchasing a valid Software License from the copyright holder.
+
+2. Commercial Use examples include (but are not limited to):
+  (a)Hosting the Software as a service (SaaS), platform, or any business use 
+case.
+  (b)Integration into a proprietary or commercial offering.
+
+Section 3: Internal Use Restriction
+
+1. Internal Use of the Software by an organization or business entity is 
+prohibited without purchasing a valid Software License from the copyright 
+holder.
+
+Section 4: Physical Product Distribution
+
+1. Selling or distributing the Software is strictly limited to its inclusion 
+as part of a Physical Product.
+
+Section 5: Compliance with Modified License Terms
+
+1. These additional terms override any conflicting terms in the original 
+GNU General Public License, version 3.
+
+2. All other terms of the GNU General Public License, version 3, apply.
+
+Section 6: Intellectual Property of Hardware Designs
+
+1. Hardware Designs, including but not limited to schematics and materials 
+lists, are the intellectual property of the copyright holder. Hardware 
+Designs are subject to the same terms and conditions as the Software. 
+
+2. You may use, reproduce, distribute, and modify the Hardware Designs so 
+long as such use, reproduction, distribution and/or modification are not 
+for a Commercial Purpose, and you attach this License.
+
+Section 7: Applicability of License to Copies
+
+This License, including all additional terms and conditions, applies to 
+all copies of the Software and Hardware Designs, whether they are 
+original or modified, regardless of how they are reproduced, distributed, 
+or transmitted.
+
+Any use, reproduction, distribution, or modification of the Software and 
+Hardware Designs must comply fully with the terms set forth in this License.
+
+This License must be included with all copies, modified or original.
+
+Failure to adhere to these terms may constitute a violation of copyright 
+law and may result in legal consequences as prescribed by applicable 
+jurisdiction. Such consequences may include monetary damages, injunctions, 
+and other remedies available under copyright law or related statutes.
+
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -41,7 +154,7 @@ know their rights.
 (1) assert copyright on the software, and (2) offer you this License
 giving you legal permission to copy, distribute and/or modify it.
 
-  For the developers' and authors' protection, the GPL clearly explains
+  For the developers' and authors' protection, the GPL clearly explains   
 that there is no warranty for this free software.  For both users' and
 authors' sake, the GPL requires that modified versions be marked as
 changed, so that their problems will not be attributed erroneously to
